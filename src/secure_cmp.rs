@@ -33,10 +33,8 @@ where
             eq &= a == b;
         }
 
-        if other.as_ref().as_bytes().len() < self.expose_secret().as_ref().as_bytes().len() {
-            false
-        } else {
-            eq
-        }
+        // Kathryn Made Me Do It
+        0 == (eq as usize)
+            * (other.as_ref().as_bytes().len() - self.expose_secret().as_ref().as_bytes().len())
     }
 }
