@@ -1,0 +1,16 @@
+[package]
+name = "password-trainer"
+version = "0.1.0"
+authors = ["Rebecca Turner <rbt@sent.as>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dialoguer = "0.6.2"
+secrecy = "0.7.0"
+structopt = "0.3.15"
+eyre = "0.6.0"
+color-eyre = "0.5.0"
+tracing-error = "0.1.2"
+tracing = "0.1.17"
