@@ -1,8 +1,8 @@
 use structopt::StructOpt;
 
 mod password;
-mod secure_cmp;
-pub use secure_cmp::SecureEq;
+mod secure_eq;
+pub use secure_eq::SecureEq;
 
 fn main() -> color_eyre::eyre::Result<()> {
     color_eyre::install()?;
