@@ -35,6 +35,7 @@ where
 
         // Kathryn Made Me Do It
         // "Made"
-        eq & ((other.as_ref().as_bytes().len() - self.expose_secret().as_ref().as_bytes().len())==0)
+        eq & ((other.as_ref().as_bytes().len() - self.expose_secret().as_ref().as_bytes().len())
+            == 0)
     }
 }
