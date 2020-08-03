@@ -35,7 +35,11 @@ where
 
         // Kathryn Made Me Do It
         // "Made"
-        eq & ((other.as_ref().as_bytes().len() - self.expose_secret().as_ref().as_bytes().len())
-            == 0)
+        let (len_difference, overflowed) = other
+            .as_ref()
+            .as_bytes()
+            .len()
+            .overflowing_sub(self.expose_secret().as_ref().as_bytes().len());
+        eq & (len_difference == 0) & !overflowed
     }
 }
