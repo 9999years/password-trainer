@@ -1,3 +1,5 @@
+use std::io;
+
 use dialoguer::{theme::ColorfulTheme, Password as DPassword};
 use secrecy::{ExposeSecret, SecretString};
 use tracing::instrument;
@@ -27,6 +29,13 @@ impl Password {
         } else {
             Matches::Incorrect
         }
+    }
+
+    pub fn test_interactive(&self) -> io::Result<Matches> {
+        DPassword::with_theme(&ColorfulTheme::default())
+            .with_prompt("password")
+            .interact()
+            .map(|p| self.test(&p))
     }
 }
 
